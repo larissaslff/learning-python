@@ -18,9 +18,24 @@ class Restaurant:
     def open_restaurant(self):
         print('O restaurante está aberto')
 
-
+""" 
 restaurante = Restaurant('Cozinha lá de casa', 'Caseira')
 restaurante.describe_restaurant()
 restaurante.open_restaurant()
 restaurante.set_number_served(3)
-restaurante.describe_restaurant()
+restaurante.describe_restaurant() """
+
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type, number_served=0, flavors=[]):
+        super().__init__(restaurant_name, cuisine_type, number_served)
+        self.flavors = flavors
+    
+    
+    def show_flavors(self):
+        for f in self.flavors:
+            print(f'Sabor: {f}')
+        
+
+sorveteria = IceCreamStand('Maná', 'sorvetes', 0, ['baunilha', 'morango'])
+sorveteria.show_flavors()
+        
